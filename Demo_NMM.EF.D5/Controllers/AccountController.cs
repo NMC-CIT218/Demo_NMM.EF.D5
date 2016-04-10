@@ -79,6 +79,7 @@ namespace Demo_NMM.EF.D2.Controllers
         // POST: Users/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AuthorizeOrRedirectAttribute(Roles = "Site Admin")]
         public async Task<ActionResult> Create(RegisterViewModel model)
         {
             if (ModelState.IsValid)
